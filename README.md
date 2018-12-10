@@ -40,6 +40,9 @@ This project adheres to some GUI Design Principles, as:
 
 ![Project Class Diagram](docs/ClassDiagram.png)
 
+## Database Schema
+![Database Schema](docs/DBSchema.png)
+
 ## Built With
 
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/) - IDE of choice
