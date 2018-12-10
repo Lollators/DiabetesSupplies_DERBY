@@ -15,13 +15,11 @@ import java.sql.Statement;
  * @since   2018-12-09
  */
 public final class DBconn {
-  //***** MySQL INFO *****
+  /* ***** MySQL INFO *****
 
-  //store information (constant) about DB that is used to access it.
-  //realistically you should ask the user to enter this information.
-
+  store information (constant) about DB that is used to access it.
+  realistically you should ask the user to enter this information. */
   //  private static final String USER = "root";
-
 
   //the password should also be salted and hashed.
 
