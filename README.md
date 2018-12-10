@@ -17,7 +17,7 @@ This project is aimed towards creating a software to manage diabetes supplies. T
 
 ## Apache Derby Setup
 
-The user shouldn't have troubles running the project straight away, as Derby is configured in embedded mode and everything should be already linked together. The only issue that can arise is the ```///``` or ```\\``` based on Windows or Mac OS.
+The user shouldn't have troubles running the project straight away, as Derby is configured in embedded mode and everything should be already linked together. The only issue that can arise is the ```//``` or ```\\``` based on Windows or Mac OS.
 This can be easily fixed by checking the DB_Conn.java file, and modifying the database URL accordingly.
 
 ## GUI Design Principles
