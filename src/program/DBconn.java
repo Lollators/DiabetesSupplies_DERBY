@@ -25,7 +25,7 @@ public final class DBconn {
 
 
   //Derby DB URL, make sure to check for // or \\ if you are on Windows or MacOS.
-  private static final String DERBY_URL = "jdbc:derby:lib//myDiabetesSupplies1";
+  private static final String DERBY_URL = "jdbc:derby:lib\\myDiabetesSupplies1";
 
   /**
    * Static final function derbyConn, uses the constants provided to create an object of type
