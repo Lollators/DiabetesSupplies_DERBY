@@ -136,7 +136,11 @@ public class UserPanelController {
 
   }
 
-  //return to main menu
+  /**
+   * Return to main menu.
+   *
+   * @param actionEvent - Mouse Click
+   */
   public void back(ActionEvent actionEvent) {
     Main.setPane(Screens.HOME.getValue());
   }

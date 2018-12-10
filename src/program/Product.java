@@ -27,32 +27,56 @@ public class Product {
     this.expDate = expDate;
   }
 
-  //return product name
+  /**
+   * Function getName returns product name.
+   *
+   * @return name - Product Name
+   */
   public String getName() {
     return name;
   }
 
-  //set product name
+  /**
+   * Function setName sets product name passed as parameter to variable.
+   *
+   * @param name - Product Name
+   */
   public void setName(String name) {
     this.name = name;
   }
 
-  //return product serial number
+  /**
+   * Function getSerialNumber returns product serial number.
+   *
+   * @return serialNumber - Product Serial Number
+   */
   public String getSerialNumber() {
     return serialNumber;
   }
 
-  //set product serial number
+  /**
+   * Function setSerialNumber sets product serial number passed as parameter to variable.
+   *
+   * @param serialNumber - Product Serial Number
+   */
   public void setSerialNumber(String serialNumber) {
     this.serialNumber = serialNumber;
   }
 
-  //return expiration date of product as a String (yyyy-mm-dd)
+  /**
+   * Function getExpDate returns expiration date of product as a String (yyyy-mm-dd).
+   *
+   * @return expDate - Product Expiration Date
+   */
   public String getExpDate() {
     return expDate;
   }
 
-  //set expiration date of product as String (yyyy-mm-dd)
+  /**
+   * Function setExpDate sets expiration date of product as String (yyyy-mm-dd).
+   *
+   * @param expDate - Product Expiration Date
+   */
   public void setExpDate(String expDate) {
     this.expDate = expDate;
   }

@@ -48,7 +48,7 @@ public final class DBconn {
     return conn;
   }
 
-  /**
+  /*
    * TO BE USED WITH MYSQL
    * Static final function startConn, uses the constants provided to create an object of type
    * Connection that can be used to query the DB.

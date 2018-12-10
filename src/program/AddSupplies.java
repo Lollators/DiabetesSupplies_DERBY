@@ -44,7 +44,11 @@ public class AddSupplies {
     supplyType.getSelectionModel().select(0);
   }
 
-  //return to main menu
+  /**
+   * Return to main menu.
+   *
+   * @param actionEvent - Mouse Click
+   */
   public void goBack(ActionEvent actionEvent) {
     Main.setPane(Screens.HOME.getValue());
   }
