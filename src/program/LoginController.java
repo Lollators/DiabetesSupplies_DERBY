@@ -38,8 +38,8 @@ public class LoginController {
   public void login(ActionEvent actionEvent) {
 
     //create query
-    String query = "SELECT * FROM ACCOUNT WHERE USERNAME='" + username.getText() + "' AND PASSWORD='"
-        + password.getText() + "'";
+    String query = "SELECT * FROM ACCOUNT WHERE USERNAME='" + username.getText()
+        + "' AND PASSWORD='" + password.getText() + "'";
     try {
       //run query and save result in ResultSet
       ResultSet rs = DBconn.queryDb(query, DBconn.derbyConn());
