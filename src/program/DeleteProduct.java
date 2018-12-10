@@ -1,5 +1,6 @@
 package program;
 
+import java.sql.Connection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -59,6 +60,7 @@ public class DeleteProduct {
     Alert alert = new Alert(AlertType.INFORMATION);
     alert.setTitle("Success!");
     alert.setHeaderText(null);
+    Connection conn = null;
 
     //if the deletionCheck is selected and serial number typed has 6 digits then proceed
     if (deletionCheck.isSelected() && productSerial.getLength() == 6) {
@@ -86,8 +88,9 @@ public class DeleteProduct {
       query = "DELETE FROM PRODUCT WHERE SERIALNUMBER='" + fullSerialNumber + "'";
 
       try {
+        conn = DBconn.derbyConn();
         //run query
-        if (DBconn.updateDb(query, DBconn.derbyConn()) != -1) {
+        if (DBconn.updateDb(query, conn) != -1) {
           alert.setContentText("Product removed successfully!");
           alert.showAndWait();
 
@@ -105,6 +108,12 @@ public class DeleteProduct {
         }
       } catch (Exception e) {
         System.out.println(e.toString());
+      } finally {
+        try {
+          conn.close();
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
       }
 
     } else {
