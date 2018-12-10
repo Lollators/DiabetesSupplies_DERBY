@@ -44,7 +44,7 @@ This project adheres to some GUI Design Principles, as:
 ![Database Schema](docs/DBSchema.png)
 
 ## JavaDoc
-[JavaDoc](https://lollators.github.io/DiabetesSupplies_DERBY/)
+[JavaDoc](https://lollators.github.io/DiabetesSupplies_DERBY/docs/javadoc/index.html)
 
 ## Built With
 
