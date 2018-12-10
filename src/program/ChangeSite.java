@@ -1,5 +1,6 @@
 package program;
 
+import java.sql.Connection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -54,6 +55,7 @@ public class ChangeSite {
     Alert alert = new Alert(AlertType.INFORMATION);
     alert.setTitle("Success!");
     alert.setHeaderText(null);
+    Connection conn = null;
 
     //check if serial numbers entered by the user are the right length
     if (tankSerial.getLength() != 6 || siteSerial.getLength() != 6
@@ -72,8 +74,10 @@ public class ChangeSite {
           + insulinSerialNumber + "'";
 
       try {
+        conn = DBconn.derbyConn();
+
         //run query
-        if (DBconn.updateDb(query, DBconn.derbyConn()) != -1) {
+        if (DBconn.updateDb(query, conn) != -1) {
           alert.setContentText("Site changed successfully, products count updated!");
           alert.showAndWait();
           Main.setPane(Screens.HOME.getValue());
@@ -83,6 +87,12 @@ public class ChangeSite {
         }
       } catch (Exception e) {
         System.out.println(e.toString());
+      } finally {
+        try {
+          conn.close();
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
       }
     }
 

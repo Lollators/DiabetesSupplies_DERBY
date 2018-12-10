@@ -1,5 +1,6 @@
 package program;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
@@ -36,13 +37,16 @@ public class LoginController {
    * @param actionEvent - mouse click
    */
   public void login(ActionEvent actionEvent) {
+    ResultSet rs = null;
+    Connection conn = null;
 
     //create query
     String query = "SELECT * FROM ACCOUNT WHERE USERNAME='" + username.getText()
         + "' AND PASSWORD='" + password.getText() + "'";
     try {
+      conn = DBconn.derbyConn();
       //run query and save result in ResultSet
-      ResultSet rs = DBconn.queryDb(query, DBconn.derbyConn());
+      rs = DBconn.queryDb(query, conn);
       if (rs != null) {
         //if ResultSet has a value then it found a match
         if (rs.next()) {
@@ -68,6 +72,13 @@ public class LoginController {
       }
     } catch (SQLException e) {
       System.out.println(e.toString());
+    } finally {
+      try {
+        rs.close();
+        conn.close();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
     }
   }
 }

@@ -1,5 +1,6 @@
 package program;
 
+import java.sql.Connection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -76,6 +77,8 @@ public class AddSupplies {
     alert2.setTitle("Error!");
     alert2.setHeaderText(null);
 
+    Connection conn = null;
+
     //serial number without letters has to be 6 digits
     if (serialNumber.getLength() == 6) {
       //based on combobox selection, set product code to serial number
@@ -106,7 +109,9 @@ public class AddSupplies {
 
       //try to run query and handle exception that might be thrown
       try {
-        if (DBconn.updateDb(query, DBconn.derbyConn()) != -1) {
+        conn = DBconn.derbyConn();
+
+        if (DBconn.updateDb(query, conn) != -1) {
           alert.setContentText("Supply successfully added!");
           alert.showAndWait();
         } else {
@@ -115,6 +120,12 @@ public class AddSupplies {
         }
       } catch (Exception e) {
         System.out.println(e.toString());
+      } finally {
+        try {
+          conn.close();
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
       }
     } else {
       alert2.setContentText("Serial Number length is wrong!");

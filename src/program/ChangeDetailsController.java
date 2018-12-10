@@ -1,5 +1,6 @@
 package program;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
@@ -67,6 +68,8 @@ public class ChangeDetailsController {
     Alert alert = new Alert(AlertType.INFORMATION);
     alert.setTitle("Success!");
     alert.setHeaderText(null);
+    ResultSet rs = null;
+    Connection conn = null;
 
     //if name is selected
     if (toggleName.isSelected()) {
@@ -74,15 +77,16 @@ public class ChangeDetailsController {
         //create query
         String query = "SELECT * FROM ACCOUNT WHERE NAME='" + currentValue.getText() + "'";
         try {
+          conn = DBconn.derbyConn();
           //run query and save result set
-          ResultSet rs = DBconn.queryDb(query, DBconn.derbyConn());
+          rs = DBconn.queryDb(query, conn);
           if (rs != null) {
             //if the result set has at least one value then it means the value inserted was valid
             if (rs.next()) {
               //then update with new value typed by the user
               query = "UPDATE ACCOUNT SET NAME='" + newValue.getText() + "' WHERE USERNAME='"
                   + Main.loggedUser + "'";
-              if (DBconn.updateDb(query, DBconn.derbyConn()) != -1) {
+              if (DBconn.updateDb(query, conn) != -1) {
                 alert.setContentText("Successfully changed your name!");
                 alert.showAndWait();
                 Main.setPane(Screens.HOME.getValue());
@@ -98,6 +102,13 @@ public class ChangeDetailsController {
           }
         } catch (SQLException e) {
           System.out.println(e.toString());
+        } finally {
+          try {
+            rs.close();
+            conn.close();
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
         }
       }
 
@@ -109,14 +120,14 @@ public class ChangeDetailsController {
         String query = "SELECT * FROM ACCOUNT WHERE PASSWORD='" + currentValue.getText() + "'";
         try {
           //run query and save result set
-          ResultSet rs = DBconn.queryDb(query, DBconn.derbyConn());
+          rs = DBconn.queryDb(query, conn);
           if (rs != null) {
             //if the result set has at least one value then it means the value inserted was valid
             if (rs.next()) {
               //then update with new value typed by the user
               query = "UPDATE ACCOUNT SET PASSWORD='" + newValue.getText() + "' WHERE USERNAME='"
                   + Main.loggedUser + "'";
-              if (DBconn.updateDb(query, DBconn.derbyConn()) != -1) {
+              if (DBconn.updateDb(query, conn) != -1) {
                 alert.setContentText("Successfully changed your password!");
                 alert.showAndWait();
                 Main.setPane(Screens.HOME.getValue());
@@ -132,6 +143,13 @@ public class ChangeDetailsController {
           }
         } catch (SQLException e) {
           System.out.println(e.toString());
+        } finally {
+          try {
+            rs.close();
+            conn.close();
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
         }
       }
 
@@ -144,14 +162,14 @@ public class ChangeDetailsController {
         String query = "SELECT * FROM ACCOUNT WHERE USERNAME='" + currentValue.getText() + "'";
         try {
           //run query and save result set
-          ResultSet rs = DBconn.queryDb(query, DBconn.derbyConn());
+          rs = DBconn.queryDb(query, conn);
           if (rs != null) {
             //if the result set has at least one value then it means the value inserted was valid
             if (rs.next()) {
               //then update with new value typed by the user
               query = "UPDATE ACCOUNT SET USERNAME='" + newValue.getText() + "' WHERE USERNAME='"
                   + currentValue.getText() + "'";
-              if (DBconn.updateDb(query, DBconn.derbyConn()) != -1) {
+              if (DBconn.updateDb(query, conn) != -1) {
                 alert.setContentText("Successfully changed your username!");
                 alert.showAndWait();
                 Main.setPane(Screens.HOME.getValue());
@@ -167,6 +185,13 @@ public class ChangeDetailsController {
           }
         } catch (SQLException e) {
           System.out.println(e.toString());
+        } finally {
+          try {
+            rs.close();
+            conn.close();
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
         }
       }
 

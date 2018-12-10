@@ -31,10 +31,10 @@ public final class DBconn {
   //Derby DB URL, make sure to check for // or \\ if you are on Windows or MacOS.
 
   //MacOS
-  //private static final String DERBY_URL = "jdbc:derby:lib//myDiabetesSupplies1";
+  private static final String DERBY_URL = "jdbc:derby:lib//myDiabetesSupplies1";
 
   //Windows
-  private static final String DERBY_URL = "jdbc:derby:lib\\myDiabetesSupplies1";
+  //private static final String DERBY_URL = "jdbc:derby:lib\\myDiabetesSupplies1";
 
   /**
    * Static final function derbyConn, uses the constants provided to create an object of type
@@ -80,25 +80,6 @@ public final class DBconn {
     return conn;
   }
   */
-
-  /**
-   * Static final function endConn, gets an object of type Connection in, and uses its method
-   * close() to terminate it. Returns an integer to indicate the status of the operation.
-   *
-   * @param conn - DB Connection Object
-   * @return int - status of operation (1 = ok, -1 = error)
-   */
-  public static final int endConn(Connection conn) {
-    int status = -1;
-    try {
-      conn.close();
-      status = 1;
-    } catch (SQLException e) {
-      System.out.println(e.toString());
-    }
-
-    return status;
-  }
 
   /**
    * Static final function queryDB, is used whenever data manipulation is not needed. If it is,
