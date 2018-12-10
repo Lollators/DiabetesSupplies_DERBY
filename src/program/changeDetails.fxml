@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.ChangeDetailsController">
+   <children>
+      <Label layoutX="461.0" layoutY="134.0" prefHeight="43.0" prefWidth="413.0" text="Change your information">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <TextField id="currentValue" fx:id="currentValue" layoutX="600.0" layoutY="274.0" prefHeight="17.0" prefWidth="141.0" promptText="Type current value" />
+      <ToggleButton id="radioName" fx:id="toggleName" layoutX="508.0" layoutY="227.0" mnemonicParsing="false" text="Name" />
+      <Label layoutX="464.0" layoutY="196.0" text="What would you like to change?" />
+      <ToggleButton id="radioUsername" fx:id="toggleUsername" layoutX="607.0" layoutY="227.0" mnemonicParsing="false" text="Username" />
+      <ToggleButton id="radioPassword" fx:id="togglePassword" layoutX="728.0" layoutY="227.0" mnemonicParsing="false" text="Password" />
+      <Label layoutX="511.0" layoutY="279.0" text="Current" />
+      <Label layoutX="511.0" layoutY="317.0" text="New" />
+      <TextField id="newValue" fx:id="newValue" layoutX="600.0" layoutY="312.0" prefHeight="17.0" prefWidth="141.0" promptText="Type new value" />
+      <Label layoutX="511.0" layoutY="357.0" text="Retype New" />
+      <TextField id="newValueCheck" fx:id="newValueCheck" layoutX="600.0" layoutY="352.0" prefHeight="17.0" prefWidth="141.0" promptText="Retype new value" />
+      <Button id="changeButton" defaultButton="true" layoutX="634.0" layoutY="406.0" mnemonicParsing="false" onAction="#changeDetails" styleClass="loginButton" stylesheets="@style.css" text="Change" />
+      <Label id="wrongValue" fx:id="wrongValue" alignment="CENTER" layoutX="478.0" layoutY="475.0" prefHeight="17.0" prefWidth="380.0" styleClass="wrongLoginText" stylesheets="@style.css" text="wrong!" visible="false" />
+      <Button fx:id="backButton" layoutX="33.0" layoutY="30.0" mnemonicParsing="false" onAction="#back" prefHeight="46.0" prefWidth="100.0" text="Back" />
+   </children>
+</AnchorPane>

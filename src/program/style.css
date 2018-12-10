@@ -1,0 +1,44 @@
+.loginButton {
+  -fx-background-color: #4286f4;
+  -fx-text-fill: white;
+}
+
+.loginPage{
+  -fx-background-color: #FFF;
+}
+
+.anchorPage{
+  -fx-background-color: #FFF;
+}
+
+.wrongLoginText{
+  -fx-text-fill: darkred;
+}
+
+.dbOK{
+  -fx-text-fill: green;
+}
+
+.dbIssue{
+  -fx-text-fill: darkred;
+}
+
+.deleteButton {
+  -fx-background-color: darkred;
+  -fx-text-fill: white;
+}
+
+.toggle-button:selected{
+  -fx-background-color: #4286f4;
+  -fx-text-fill: white;
+}
+
+.userPage{
+  -fx-background-color: seagreen;
+  -fx-text-fill: white;
+}
+
+.removeSupplies{
+  -fx-background-color: darkorange;
+  -fx-text-fill: white;
+}

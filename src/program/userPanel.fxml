@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.UserPanelController">
+   <children>
+      <Label layoutX="176.0" layoutY="91.0" prefHeight="98.0" prefWidth="287.0" text="Add User">
+         <font>
+            <Font size="62.0" />
+         </font></Label>
+      <Button fx:id="createAccountButton" layoutX="246.0" layoutY="480.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="52.0" prefWidth="130.0" styleClass="loginButton" stylesheets="@style.css" text="Create Account" />
+      <TextField fx:id="name" layoutX="187.0" layoutY="238.0" prefHeight="43.0" prefWidth="263.0" promptText="Name" />
+      <TextField fx:id="username" layoutX="187.0" layoutY="322.0" prefHeight="43.0" prefWidth="263.0" promptText="Username" />
+      <PasswordField fx:id="password" layoutX="187.0" layoutY="396.0" prefHeight="43.0" prefWidth="263.0" promptText="Password" />
+      <Label layoutX="704.0" layoutY="87.0" prefHeight="98.0" prefWidth="439.0" text="Remove User">
+         <font>
+            <Font size="62.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameDel" layoutX="793.0" layoutY="238.0" prefHeight="43.0" prefWidth="263.0" promptText="Username" />
+      <Button fx:id="deleteAccountButton" layoutX="860.0" layoutY="370.0" mnemonicParsing="false" onAction="#deleteAccount" prefHeight="52.0" prefWidth="130.0" styleClass="deleteButton" stylesheets="@style.css" text="Delete Account" />
+      <Button fx:id="backButton" layoutX="38.0" layoutY="25.0" mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="101.0" text="Back" />
+      <CheckBox fx:id="deletionCheck" layoutX="704.0" layoutY="307.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="439.0" text="Check to confirm deletion of user (irreversible!)">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>

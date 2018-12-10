@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720" prefWidth="1280" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.HomeController">
+   <children>
+      <MenuBar layoutX="1088.0" layoutY="15.0" prefHeight="33.0" prefWidth="174.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Account">
+            <items>
+                  <MenuItem id="changeDetailsLabel" mnemonicParsing="false" onAction="#changeDetails" text="Change Details" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Logout">
+               <items>
+                  <MenuItem id="logOutButton" fx:id="logOutButton" mnemonicParsing="false" onAction="#logout" text="Logout" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+      <Label fx:id="welcome" layoutX="209.0" layoutY="75.0" prefHeight="46.0" prefWidth="997.0" text="Welcome to the Control Panel">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <TableView fx:id="productTable" layoutX="721.0" layoutY="152.0" prefHeight="474.0" prefWidth="535.0">
+        <columns>
+          <TableColumn fx:id="serialNumberCol" prefWidth="183.5" text="Serial Number" />
+            <TableColumn fx:id="nameCol" prefWidth="187.5" text="Name" />
+          <TableColumn fx:id="expCol" prefWidth="149.0" text="Expiration Date" />
+
+        </columns>
+      </TableView>
+      <Button layoutX="90.0" layoutY="252.0" mnemonicParsing="false" onAction="#addSupplies" prefHeight="54.0" prefWidth="134.0" styleClass="userPage" stylesheets="@style.css" text="Add Supplies" />
+      <Button layoutX="90.0" layoutY="169.0" mnemonicParsing="false" onAction="#userPanel" prefHeight="54.0" prefWidth="134.0" styleClass="userPage" stylesheets="@style.css" text="User Panel" />
+      <Button layoutX="90.0" layoutY="333.0" mnemonicParsing="false" onAction="#changeSite" prefHeight="54.0" prefWidth="134.0" styleClass="removeSupplies" stylesheets="@style.css" text="Change of Site" />
+      <Button layoutX="90.0" layoutY="572.0" mnemonicParsing="false" onAction="#removeSupplies" prefHeight="54.0" prefWidth="134.0" styleClass="deleteButton" stylesheets="@style.css" text="Remove Supplies" />
+      <Label layoutX="872.0" layoutY="652.0" text="Database Connection: " />
+      <Circle fx:id="dbConnection" fill="#1de43a" layoutX="1032.0" layoutY="661.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <ComboBox id="productCombo" fx:id="productCombo" layoutX="473.0" layoutY="238.0" prefHeight="27.0" prefWidth="222.0" visibleRowCount="5" />
+      <Label layoutX="474.0" layoutY="196.0" text="Select Products to Show">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="showProducts" layoutX="541.0" layoutY="292.0" mnemonicParsing="false" onAction="#showProducts" prefHeight="27.0" prefWidth="87.0" styleClass="loginButton" stylesheets="@style.css" text="Show" />
+   </children>
+</AnchorPane>

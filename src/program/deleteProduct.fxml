@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.DeleteProduct">
+  <children>
+    <Label layoutX="386.0" layoutY="95.0" prefHeight="98.0" prefWidth="504.0" text="Remove Product">
+      <font>
+        <Font size="62.0" />
+      </font>
+    </Label>
+    <TextField fx:id="productSerial" layoutX="567.0" layoutY="313.0" prefHeight="43.0" prefWidth="263.0" promptText="Product Serial Number" />
+    <Button fx:id="deleteProductButton" layoutX="578.0" layoutY="436.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="52.0" prefWidth="130.0" styleClass="deleteButton" stylesheets="@style.css" text="Delete Product" />
+    <Button fx:id="backButton" layoutX="38.0" layoutY="25.0" mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="101.0" text="Back" />
+    <CheckBox fx:id="deletionCheck" layoutX="405.0" layoutY="382.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="456.0" text="Check to confirm deletion of product (irreversible!)">
+      <font>
+        <Font size="17.0" />
+      </font>
+    </CheckBox>
+      <Label layoutX="355.0" layoutY="225.0" prefHeight="34.0" prefWidth="182.0" text="Type of Product:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="292.0" layoutY="315.0" prefHeight="34.0" prefWidth="244.0" text="Product Serial Number:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="productType" layoutX="566.0" layoutY="222.0" prefHeight="43.0" prefWidth="263.0" />
+      <Label layoutX="372.0" layoutY="347.0" text="(Omit letters)" />
+  </children>
+</AnchorPane>
