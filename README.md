@@ -32,8 +32,8 @@ This project adheres to some GUI Design Principles, as:
 - The effect of actions on objects are visible (especially alterations to the database).
 - It is very responsive.
 
-## Project GIF
-
+## Project Sample GIF
+![GIF Demo](docs/simpledemo.gif)
 
 ## ToDo:
 
