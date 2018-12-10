@@ -16,15 +16,26 @@ import java.sql.Statement;
  */
 public final class DBconn {
   //***** MySQL INFO *****
+
   //store information (constant) about DB that is used to access it.
   //realistically you should ask the user to enter this information.
-  private static final String USER = "root";
+
+  //  private static final String USER = "root";
+
+
   //the password should also be salted and hashed.
-  private static final String PASSWORD = "mysql_PW";
-  private static final String CONN_ADD = "jdbc:mysql://localhost:3306/myDiabetesSupplies";
+
+  //  private static final String PASSWORD = "mysql_PW";
+  //  private static final String CONN_ADD = "jdbc:mysql://localhost:3306/myDiabetesSupplies";
 
 
+  // ******** DERBY INFO ********
   //Derby DB URL, make sure to check for // or \\ if you are on Windows or MacOS.
+
+  //MacOS
+  //private static final String DERBY_URL = "jdbc:derby:lib//myDiabetesSupplies1";
+
+  //Windows
   private static final String DERBY_URL = "jdbc:derby:lib\\myDiabetesSupplies1";
 
   /**

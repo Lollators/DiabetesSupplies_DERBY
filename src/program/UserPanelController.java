@@ -50,7 +50,7 @@ public class UserPanelController {
     try {
       //run query and save result set
       ResultSet rs = DBconn.queryDb(query, DBconn.derbyConn());
-      if (rs == null) {
+      if (rs == null || !rs.next()) {
         //if the result set has at least one value then it means the value inserted was valid
         //then update with new value typed by the user
         //create query
