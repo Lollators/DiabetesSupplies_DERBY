@@ -15,12 +15,11 @@ The JavaDoc for this project is available as well, get to it by clicking [here](
 
 ## Project Description
 
-This project is aimed towards creating a software to manage diabetes supplies. There can be multiple users added. These users will be stored in a database along with a table reserved for the supplies. The primary key of the user is going to be their username (does not allow duplicates). The primary key of the products is going to be their serial number. There will be a third table used to set each of the primary keys as foreign keys to build a relation. This will prevent items being left in the database when a certain entity, whose relationship is connected to the item, is deleted.
+This project is aimed towards creating a software to manage diabetes supplies. There can be multiple users added. These accounts will be stored in a database along with a table reserved for the supplies. The primary key of the account is going to be its username (does not allow duplicates). The primary key of a product is going to be its serial number. The product table will also include a username attribute, used as a foreign key that references the username attribute in the account table. In this way it is possible to link a product to its owner.
 
 ## Apache Derby Setup
 
-The user shouldn't have troubles running the project straight away, as Derby is configured in embedded mode and everything should be already linked together. The only issue that can arise is the ```//``` or ```\\``` based on Windows or Mac OS.
-This can be easily fixed by checking the DB_Conn.java file, and modifying the database URL accordingly.
+The user shouldn't have troubles running the project straight away, as Derby is configured in embedded mode and everything should be already linked together. The only issue that can arise is the ```//``` or ```\\``` based on Windows or Mac OS, in the Database URL variable. This variable is used to effectively connect to the database. In order to overcome the issue, I personally included two executable JAR files, one for each operating system. 
 
 ## GUI Design Principles
 
@@ -33,10 +32,13 @@ This project adheres to some GUI Design Principles, as:
 - The effect of actions on objects are visible (especially alterations to the database).
 - It is very responsive.
 
+## Project GIF
+
+
 ## ToDo:
 
 - [X] Add invalid username check when trying to delete a user.
-- [X] Add username already exist check when trying to add a new user.
+- [X] Add account already exist check when trying to add a new user.
 
 ## Class Diagram
 
