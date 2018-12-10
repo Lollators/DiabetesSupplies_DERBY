@@ -11,6 +11,8 @@ The files contained in this repository are used for grading purposes in the COP 
 The languages used are **Java**, **JavaFX**, and **SQL**.
 This project is going to be under constant development. Whenever something will need to be added to the program, it will also  be displayed under the **ToDo** section of this README.
 
+The JavaDoc for this project is available as well, get to it by clicking [here](https://lollators.github.io/DiabetesSupplies_DERBY/javadoc/program/package-summary.html).
+
 ## Project Description
 
 This project is aimed towards creating a software to manage diabetes supplies. There can be multiple users added. These users will be stored in a database along with a table reserved for the supplies. The primary key of the user is going to be their username (does not allow duplicates). The primary key of the products is going to be their serial number. There will be a third table used to set each of the primary keys as foreign keys to build a relation. This will prevent items being left in the database when a certain entity, whose relationship is connected to the item, is deleted.
@@ -42,9 +44,6 @@ This project adheres to some GUI Design Principles, as:
 
 ## Database Schema
 ![Database Schema](docs/DBSchema.png)
-
-## JavaDoc
-[JavaDoc](https://lollators.github.io/DiabetesSupplies_DERBY/docs/javadoc/index.html)
 
 ## Built With
 
