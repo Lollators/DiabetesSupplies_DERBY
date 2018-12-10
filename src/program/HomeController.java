@@ -99,6 +99,7 @@ public class HomeController {
     String selection = (String)productCombo.getValue();
     String query = "";
     String code = "";
+    ResultSet rs = null;
 
     //every time the user clicks the button the table should clear from any previous product
     productTable.getItems().clear();
@@ -131,7 +132,7 @@ public class HomeController {
 
     try {
       //run query and save result in ResultSet
-      ResultSet rs = DBconn.queryDb(query, DBconn.derbyConn());
+      rs = DBconn.queryDb(query, DBconn.derbyConn());
       if (rs != null) {
         while (rs.next()) {
           //for each result of the query create a Product object with the three variables fetched
@@ -145,6 +146,12 @@ public class HomeController {
       }
     } catch (SQLException e) {
       System.out.println(e.toString());
+    } finally {
+      try {
+        rs.close();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
     }
   }
 
