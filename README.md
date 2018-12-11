@@ -32,6 +32,14 @@ This project adheres to some GUI Design Principles, as:
 - The effect of actions on objects are visible (especially alterations to the database).
 - It is very responsive.
 
+## Login Info
+
+In order to log in, the user will need a username and password. For the purpose of this project you can use:
+
+username  |password
+----------|----------
+Lollators |test
+
 ## Project Sample GIF
 ![GIF Demo](docs/simpledemo.gif)
 
