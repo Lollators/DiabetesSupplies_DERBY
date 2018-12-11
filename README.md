@@ -21,6 +21,14 @@ This project is aimed towards creating a software to manage diabetes supplies. T
 
 The user shouldn't have troubles running the project straight away, as Derby is configured in embedded mode and everything should be already linked together. The only issue that can arise is the ```//``` or ```\\``` based on Windows or Mac OS, in the Database URL variable. This variable is used to effectively connect to the database. In order to overcome the issue, I personally included two executable JAR files, one for each operating system. 
 
+## Installation setup
+
+- Download this repository as a .zip file.
+- Extract all the content in a folder.
+- Double click on one of the .jar files, based on your Operating System. Alternatively, using the command prompt utilize: ```java -jar filename.jar``` while being in the same directory as the file.
+
+Note: if your Java Environment Path is not set up correctly, you may encounter issues while trying to open the file from the command prompt.
+
 ## GUI Design Principles
 
 This project adheres to some GUI Design Principles, as:
